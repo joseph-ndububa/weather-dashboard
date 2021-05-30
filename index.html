@@ -9,20 +9,84 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
 </head>
 
 <body>
-    <navbar class="col-12" align="center">
-        <h1>Weather Dashboard</h1>
-        </header>
-        <main>
+    <header class="container">
+        <div class="col-12">
+            <h1 align="center">Weather Dashboard</h1>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <section class="col-2 searchArea">
+                <h2>Search for a City:</h2>
+                <input class="form-control" placeholder="Enter a city">
+                <button type="button" class="btn btn-primary form-control id=searchBtn">Search</button>
+                <div class="col-2 searchHistory">
 
-        </main>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./assets/script.js"></script>
+                </div>
+            </section>
+            <section class="col-10">
+                <div class="row">
+                    <div class="col-10">
+                        <h2>City</h2> <br>
+                        <p>Temp:</p><br>
+                        <p>Wind:</p><br>
+                        <p>Humidity:</p><br>
+                        <p>UV Index:</p><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card text-white bg-info mb-3 ml-3 mr-2" style="width: 10rem;">
+                        <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
+                        <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
+                        <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
+                        <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-info mb-3 ml-2 mr-3" style="width: 10rem;">
+                        <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-navbar {
-    background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
-};
+header {
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    color: white;
+}
