@@ -23,8 +23,8 @@
         <div class="row">
             <section class="col-2 searchArea">
                 <h2>Search for a City:</h2>
-                <input class="form-control" placeholder="Enter a city">
-                <button type="button" class="btn btn-primary form-control id=searchBtn">Search</button>
+                <input class="form-control" placeholder="Enter a city" id="city">
+                <button type="button" class="btn btn-primary form-control" id="searchBtn">Search</button>
                 <div class="col-2 searchHistory">
 
                 </div>
@@ -32,54 +32,17 @@
             <section class="col-10">
                 <div class="row">
                     <div class="col-10">
-                        <h2>City</h2> <br>
-                        <p>Temp:</p><br>
-                        <p>Wind:</p><br>
-                        <p>Humidity:</p><br>
-                        <p>UV Index:</p><br>
+                        <h2 id="name"></h2> <br>
+                        <p id="temp"></p><br>
+                        <p id="wind"></p><br>
+                        <p id="humidity"></p><br>
+                        <p id="uv"></p><br>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card text-white bg-info mb-3 ml-3 mr-2" style="width: 10rem;">
-                        <div class="card-header">Date</div>
-                        <div class="card-body">
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Wind:</p>
-                            <p class="card-text">Humidity:</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
-                        <div class="card-header">Date</div>
-                        <div class="card-body">
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Wind:</p>
-                            <p class="card-text">Humidity:</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
-                        <div class="card-header">Date</div>
-                        <div class="card-body">
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Wind:</p>
-                            <p class="card-text">Humidity:</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-info mb-3 ml-2 mr-2" style="width: 10rem;">
-                        <div class="card-header">Date</div>
-                        <div class="card-body">
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Wind:</p>
-                            <p class="card-text">Humidity:</p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-info mb-3 ml-2 mr-3" style="width: 10rem;">
-                        <div class="card-header">Date</div>
-                        <div class="card-body">
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Wind:</p>
-                            <p class="card-text">Humidity:</p>
-                        </div>
-                    </div>
+                    <h2 class="fc">5-Day Forecast:</h2>
+                </div>
+                <div class="row" id="forecastDiv">
                 </div>
             </section>
         </div>
