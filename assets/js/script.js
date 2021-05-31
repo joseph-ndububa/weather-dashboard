@@ -5,7 +5,7 @@ function getCurrentWeather() {
     try {
         var city = document.querySelector("#city").value;
         var apiKey = '18bb77d524842388b83512049fe6a263';
-        var currentUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+        var currentUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
         if (city) {
             fetch(currentUrl)
                 .then(data => data.json())
@@ -14,7 +14,7 @@ function getCurrentWeather() {
                     var name = document.getElementById("name");
                     var date = moment().format('MM/DD/YYYY');
                     var iconId = weather.weather[0].icon;
-                    var icon = '<img src="http://openweathermap.org/img/w/' + iconId + '.png" />'
+                    var icon = '<img src="https://openweathermap.org/img/w/' + iconId + '.png" />'
                     name.innerHTML = weather.name + " " + "(" + date + ")" + icon;
                     var tempC = weather.main.temp - 273.15;
                     tempC = tempC.toFixed(0);
@@ -65,7 +65,7 @@ function getForecast() {
         if (city !== "") {
             document.getElementById("forecastDiv").innerHTML = "";
             var apiKey = '18bb77d524842388b83512049fe6a263';
-            var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey;
+            var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey;
             fetch(forecastUrl)
                 .then(data => data.json())
                 .then(res => {
@@ -95,7 +95,7 @@ function getForecast() {
                             dayHumidity.className = "card-text";
                             dayHumidity.textContent = "Humidity: " + forecastData[i].main.humidity + "%";
                             var iconId = forecastData[i].weather[0].icon;
-                            var iconUrl = 'http://openweathermap.org/img/w/' + iconId + '.png';
+                            var iconUrl = 'https://openweathermap.org/img/w/' + iconId + '.png';
                             var newImage = document.createElement("img");
                             newImage.src = iconUrl;
                             card.appendChild(cardHeader);
