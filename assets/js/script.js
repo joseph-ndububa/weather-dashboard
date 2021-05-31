@@ -37,12 +37,15 @@ function getCurrentWeather() {
                             uvIndex.innerHTML = "UV Index: ";
                             if (uvi <= 2) {
                                 uvElement.style.backgroundColor = "green";
+                                uvElement.style.color = "white";
                             }
                             else if (uvi > 2 && uvi <= 5) {
                                 uvElement.style.backgroundColor = "yellow";
+                                uvElement.style.color = "black";
                             }
                             else if (uvi > 5) {
                                 uvElement.style.backgroundColor = "red";
+                                uvElement.style.color = "white";
                             }
                             uvIndex.appendChild(uvElement);
                         })
@@ -69,7 +72,6 @@ function getForecast() {
                 .then(res => {
                     var forecast = res;
                     var forecastData = forecast.list;
-                    $(".fc").show();
                     for (i in forecastData) {
                         if (i == 7 || i == 15 || i == 23 || i == 31 | i == 39) {
                             var card = document.createElement("div");
@@ -107,6 +109,7 @@ function getForecast() {
                             forecastDiv.appendChild(card);
                         }
                     }
+                    $(".fc").show();
                 })
 
         }
@@ -137,9 +140,6 @@ function saveSearchHistory() {
             localStorage.setItem("cities", JSON.stringify(savedCities));
         }
     }
-
-    displayHistory();
-
 }
 
 function displayHistory() {
@@ -148,7 +148,7 @@ function displayHistory() {
         if (savedCities[i] !== "") {
             var historyBtn = document.createElement("button");
             historyBtn.type = "button";
-            historyBtn.className = "btn btn-primary form-control mt-2 mb-2 history"
+            historyBtn.className = "btn btn-secondary form-control mt-2 mb-2 history"
             historyBtn.innerHTML = savedCities[i];
             $('.searchArea').append(historyBtn);
         }
@@ -159,9 +159,22 @@ searchButton.addEventListener("click", function () {
     getCurrentWeather();
     getForecast();
     saveSearchHistory();
+    displayHistory();
 })
 
 displayHistory();
+
+$('.searchArea').on('click', '.history', (function () {
+    document.querySelector("#city").value = $(this).html();
+    getCurrentWeather();
+    getForecast();
+    saveSearchHistory();
+    displayHistory();
+}))
+
+$('#city').click(function () {
+    $(this).val("");
+})
 
 
 
