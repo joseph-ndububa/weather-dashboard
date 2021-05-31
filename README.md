@@ -4,4 +4,4 @@ Here's a sample screenshot of the application:
 
 ![Screenshot](https://i.imgur.com/iwEuhYH.png)
 
-The deployed application can be accessed at [Workday Scheduler](https://josephn90.github.io/weather-dashboard/ "Weather Dashboard")
+The deployed application can be accessed at [Weather Dashboard](https://josephn90.github.io/weather-dashboard/ "Weather Dashboard")
