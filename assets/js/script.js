@@ -70,6 +70,7 @@ function getForecast() {
                 .then(data => data.json())
                 .then(res => {
                     var forecast = res;
+                    console.log(res);
                     var forecastData = forecast.list;
                     for (i in forecastData) {
                         if (i == 7 || i == 15 || i == 23 || i == 31 | i == 39) {
@@ -108,7 +109,16 @@ function getForecast() {
                             forecastDiv.appendChild(card);
                         }
                     }
-                    $(".fc").show();
+
+                    if (forecast.cod === "200") {
+                        $(".fc").show();
+                        $("#currentDay").show();
+                    }
+                    else {
+                        $(".fc").hide();
+                        $("#currentDay").hide();
+                    }
+
                 })
 
         }
@@ -173,6 +183,16 @@ $('.searchArea').on('click', '.history', (function () {
 $('#city').click(function () {
     $(this).val("");
 })
+
+searchButton.addEventListener("keyup", function (event) {
+
+    if (event.keyCode === 13) {
+
+        event.preventDefault();
+
+        document.querySelector("#searchBtn").click();
+    }
+});
 
 displayHistory();
 
