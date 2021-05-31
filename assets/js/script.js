@@ -184,13 +184,13 @@ $('#city').click(function () {
     $(this).val("");
 })
 
-searchButton.addEventListener("keyup", function (event) {
+$('#city').keypress(function (event) {
 
     if (event.keyCode === 13) {
 
         event.preventDefault();
 
-        document.querySelector("#searchBtn").click();
+        $("#searchBtn").click();
     }
 });
 
