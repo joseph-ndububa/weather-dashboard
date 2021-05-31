@@ -1,5 +1,12 @@
+// hide forecast on app load
+
 $(".fc").hide();
+
+// reference to search button
+
 var searchButton = document.querySelector("#searchBtn");
+
+// make api call for current weather and display results
 
 function getCurrentWeather() {
     try {
@@ -58,6 +65,8 @@ function getCurrentWeather() {
         console.log(err);
     }
 }
+
+// make api call for forecast and display results
 
 function getForecast() {
     try {
@@ -128,6 +137,8 @@ function getForecast() {
     }
 }
 
+// save search history to localstorage
+
 function saveSearchHistory() {
     document.querySelectorAll('.history').forEach(item => item.remove());
     var city = document.querySelector("#city").value;
@@ -151,6 +162,8 @@ function saveSearchHistory() {
     }
 }
 
+// display the contents of localstorage
+
 function displayHistory() {
     var savedCities = JSON.parse(localStorage.getItem("cities"));
     for (i in savedCities) {
@@ -164,6 +177,8 @@ function displayHistory() {
     }
 }
 
+// update current weather, forecast, and history
+
 function update() {
     getCurrentWeather();
     getForecast();
@@ -171,18 +186,26 @@ function update() {
     displayHistory();
 }
 
+// updates current weather, forecast, and history when clicking the search button
+
 searchButton.addEventListener("click", function () {
     update();
 })
+
+// updates the page when a history button is clicked
 
 $('.searchArea').on('click', '.history', (function () {
     document.querySelector("#city").value = $(this).html();
     update();
 }))
 
+// clears the input box when clicked
+
 $('#city').click(function () {
     $(this).val("");
 })
+
+// makes enter trigger a click event on the search button
 
 $('#city').keypress(function (event) {
 
@@ -193,6 +216,8 @@ $('#city').keypress(function (event) {
         $("#searchBtn").click();
     }
 });
+
+// displays search history on page load
 
 displayHistory();
 
