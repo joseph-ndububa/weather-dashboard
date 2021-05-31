@@ -1,4 +1,4 @@
-$(".fc").hide()
+$(".fc").hide();
 var searchButton = document.querySelector("#searchBtn");
 
 function getCurrentWeather() {
@@ -49,7 +49,6 @@ function getCurrentWeather() {
                             }
                             uvIndex.appendChild(uvElement);
                         })
-
                 })
 
 
@@ -75,10 +74,10 @@ function getForecast() {
                     for (i in forecastData) {
                         if (i == 7 || i == 15 || i == 23 || i == 31 | i == 39) {
                             var card = document.createElement("div");
-                            card.className = "card text-white bg-info mb-3 ml-3 mr-3 mt-4";
+                            card.className = "card text-white bg-info mb-3 ml-2 mr-2 mt-4";
                             card.style.width = "10rem;"
                             var cardHeader = document.createElement("div");
-                            cardHeader.class = "card-header";
+                            cardHeader.className = "card-header";
                             var forecastDate = forecastData[i].dt_txt;
                             var date = forecastDate.slice(0, 10);
                             cardHeader.textContent = date;
@@ -155,27 +154,26 @@ function displayHistory() {
     }
 }
 
-searchButton.addEventListener("click", function () {
+function update() {
     getCurrentWeather();
     getForecast();
     saveSearchHistory();
     displayHistory();
-})
+}
 
-displayHistory();
+searchButton.addEventListener("click", function () {
+    update();
+})
 
 $('.searchArea').on('click', '.history', (function () {
     document.querySelector("#city").value = $(this).html();
-    getCurrentWeather();
-    getForecast();
-    saveSearchHistory();
-    displayHistory();
+    update();
 }))
 
 $('#city').click(function () {
     $(this).val("");
 })
 
-
+displayHistory();
 
 
